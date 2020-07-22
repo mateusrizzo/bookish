@@ -1,0 +1,34 @@
+div.homeText{
+    position: absolute;
+    left: 38px;
+    top: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 470px;
+  }
+#title-home{
+    font-size: 55px;
+    padding-bottom: 12px;
+}
+#spend-time{
+    font-size: 24px;
+    padding-bottom: 30px;
+}
+#discover{
+    width: 600px;
+    height: 60px;
+    font-size: 20px;
+    border-radius: 5px;
+    width: 100%;
+}
+#discover:hover{
+    background: #7872e9;
+}
+img{
+    position: absolute;
+    width: 545px;
+    height: 325px;
+    left: 805px;
+    top: 300px;
+}
