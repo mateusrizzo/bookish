@@ -14,8 +14,6 @@ export default function Search(){
             .then(RenderBooks());
     }, [search])
 
-
-
     function RenderBooks(){
         return(
             <>
