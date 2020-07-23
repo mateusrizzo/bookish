@@ -10,14 +10,12 @@ export default function Search(){
     useEffect(() => {
         const key = 'AIzaSyBwjF6e-Eo1shoFRE2Q2-f9W6iP5JMPlzY';
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}&key=${key}&maxResults=40`)
-            .then(response => {
-                setBooks(response.data.items);
-            })
+            .then(response => {setBooks(response.data.items);})
+            .then(RenderBooks());
     }, [search])
-    useEffect(() => {
-        console.log(books);
-        RenderBooks();
-    }, [books])
+
+
+
     function RenderBooks(){
         return(
             <>
@@ -32,6 +30,7 @@ export default function Search(){
             </>
         )
     }
+   
     function SearchBooks(event) {
             event.preventDefault();
             setSearch(event.target.searchQuery.value);
