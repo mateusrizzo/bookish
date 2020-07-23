@@ -23,7 +23,7 @@ export default function Search(){
             <>
                 {books.map(books => (
                     <li key={books.id}>
-                        {books.volumeInfo.imageLinks === undefined ? '':<header style={{backgroundImage: `url(${books.volumeInfo.imageLinks.smallThumbnail})`}}/>}
+                        {books.volumeInfo.imageLinks === undefined ? '':<a href={books.volumeInfo.infoLink} target="_blank"><header style={{backgroundImage: `url(${books.volumeInfo.imageLinks.smallThumbnail})`}}/></a>}
                         <span className="bookInfo">{books.volumeInfo.title}</span>
                         <span className="bookInfo">{books.volumeInfo.author}</span>
                         <span className="bookInfo">{books.volumeInfo.pageCount ? books.volumeInfo.pageCount + ' páginas': ''}</span>
