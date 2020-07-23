@@ -14,7 +14,7 @@ export default function Home({history}){
                 <button id="discover" onClick={enterButton}>Discover</button>
             </div>
             <div id="image">
-                <img src={book_reader}/>
+                <img src={book_reader} alt="Bookish"/>
             </div>
         </>
     );
