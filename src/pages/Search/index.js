@@ -7,15 +7,15 @@ import axios from 'axios';
 export default function Search(){
     const [search, setSearch] = useState('');
     const [books, setBooks] = useState([]);
+    const [results, setResults] = useState('');
     useEffect(() => {
         const key = 'AIzaSyBwjF6e-Eo1shoFRE2Q2-f9W6iP5JMPlzY';
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}&key=${key}&maxResults=40`)
             .then(response => {setBooks(response.data.items);})
-            .then(RenderBooks());
     }, [search])
 
-    function RenderBooks(){
-        return(
+    useEffect(()=>{
+        setResults(
             <>
                 {books.map(books => (
                     <li key={books.id}>
@@ -27,8 +27,8 @@ export default function Search(){
                 ))}
             </>
         )
-    }
-   
+    }, [books])
+
     function SearchBooks(event) {
             event.preventDefault();
             setSearch(event.target.searchQuery.value);
@@ -49,7 +49,7 @@ export default function Search(){
             </form>
         </div>    
             <ul id="results">
-                {books ? <RenderBooks/> : ''}
+                {results ? results : ''}
             </ul>
         
         </>
